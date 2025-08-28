@@ -16,6 +16,10 @@
 시스템 아키텍처 및 설계 문서
 - (준비 중)
 
+### 🎮 [게임 디자인](./gamedesign/INDEX_KOR.md)
+게임 디자인 문서 및 사양
+- [자본주의 시장 시뮬레이션](./gamedesign/capitalism-game-design-doc_KOR.md) - 핵심 게임 디자인 문서
+
 ### 🔌 [API 참조](./api/INDEX_KOR.md)
 API 문서 및 참조
 - (준비 중)
@@ -39,3 +43,4 @@ API 문서 및 참조
 - `#mobile` - 모바일 플랫폼 가이드
 - `#architecture` - 시스템 설계 문서
 - `#api` - API 참조
+- `#game-design` - 게임 디자인 문서

@@ -4,7 +4,7 @@ tags: [index, documentation, main]
 related: []
 parent: ../../CLAUDE.md
 created: 2025-08-28
-updated: 2025-08-28
+updated: 2025-08-29
 priority: high
 ---
 
@@ -25,6 +25,10 @@ Development guidelines and standards for the project
 ### 🏗️ [Architecture](./architecture/INDEX.md)
 System architecture and design documentation
 - (Coming soon)
+
+### 🎮 [Game Design](./gamedesign/INDEX.md)
+Game design documents and specifications
+- [Capitalism Market Simulation](./gamedesign/capitalism-game-design-doc.md) - Core game design document
 
 ### 🔌 [API Reference](./api/INDEX.md)
 API documentation and references
@@ -49,3 +53,4 @@ Reference materials and specifications
 - `#mobile` - Mobile platform guides
 - `#architecture` - System design docs
 - `#api` - API references
+- `#game-design` - Game design documents

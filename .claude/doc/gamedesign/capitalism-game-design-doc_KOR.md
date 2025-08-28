@@ -1,5 +1,11 @@
 # 자본주의 시장 시뮬레이션 게임 - 기획 문서
 
+[🇬🇧 English Version](./capitalism-game-design-doc.md)
+
+## 📍 네비게이션
+
+[↩️ 게임 디자인으로 돌아가기](./INDEX_KOR.md) | [📚 문서 인덱스](../INDEX_KOR.md) | [🏠 홈](../../../CLAUDE_KOR.md)
+
 ## 1. 게임 개요
 
 ### 1.1 핵심 컨셉
