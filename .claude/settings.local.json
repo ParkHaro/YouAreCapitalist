@@ -5,9 +5,15 @@
       "Bash(git remote set-url:*)",
       "Bash(git pull:*)",
       "Bash(git branch:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Read(C:\\Users\\haro7\\.ssh/**)",
+      "Bash(ssh:*)",
+      "Bash(cmd.exe:*)",
+      "Bash(powershell:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []
-  }
+  },
+  "outputStyle": "Korean Concise"
 }
