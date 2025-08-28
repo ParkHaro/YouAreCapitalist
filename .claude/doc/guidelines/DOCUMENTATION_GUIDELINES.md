@@ -64,3 +64,127 @@ When working with documentation:
 - Use appropriate technical terminology for each language
 - Maintain readability and clarity in Korean translations
 - Keep formatting consistent between language versions
+
+## Documentation Organization Structure
+
+All documentation (except CLAUDE.md) must be stored in `.claude/doc/` directory:
+
+```
+.claude/
+├── doc/
+│   ├── guidelines/       # Development guidelines
+│   ├── architecture/     # Architecture documentation
+│   ├── api/             # API documentation
+│   ├── gamedesign/      # Game design documentation
+│   │   ├── mechanics/   # Game mechanics
+│   │   ├── systems/     # Game systems
+│   │   ├── levels/      # Level design
+│   │   └── economy/     # Economy system
+│   ├── guides/          # User guides
+│   └── reference/       # Reference documentation
+└── CLAUDE.md           # Root documentation file
+```
+
+## Documentation Metadata
+
+All `.md` files (except `_KOR` versions) must include metadata header:
+
+```yaml
+---
+category: [guidelines|architecture|api|guides|reference|gamedesign]
+tags: [unity, documentation, mobile, etc]
+related: [linked-doc1.md, linked-doc2.md]
+parent: parent-doc.md
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+priority: [high|medium|low]
+---
+```
+
+## Document Navigation Structure
+
+Every document must include a navigation section:
+
+```markdown
+## 📍 Navigation
+
+[↩️ Back to Parent](./parent-document.md) | [🏠 Home](../../CLAUDE.md)
+
+### 🔗 Related Documents
+- [Related Doc 1](./related1.md) - Brief description
+- [Related Doc 2](./related2.md) - Brief description
+
+### 📚 In This Section
+- [Child Doc 1](./child1.md)
+- [Child Doc 2](./child2.md)
+```
+
+## Document Hierarchy & Indexing
+
+1. **Root Level**: CLAUDE.md (main index)
+2. **Category Index**: Each category folder must have INDEX.md
+3. **Cross-References**: Use metadata `related` field for connections
+4. **Breadcrumb Trail**: Show document path in navigation
+
+## Cross-Language Link Rules
+
+**CRITICAL**: Links must respect language versions:
+- In `.md` files: Link to other `.md` files
+- In `_KOR.md` files: Link to other `_KOR.md` files
+
+Example:
+```markdown
+<!-- In README.md -->
+See [API Guide](.claude/doc/api/API_GUIDE.md)
+
+<!-- In README_KOR.md -->
+참조: [API 가이드](.claude/doc/api/API_GUIDE_KOR.md)
+```
+
+## Game Design Documentation Guidelines
+
+Game design documents in `claude_gamedesign/` folder:
+- **Cross-Linking**: Actively link to related mechanics, systems, and features
+- **Hierarchical Structure**: Use subfolders for organizing complex systems
+- **Categories**: mechanics/, systems/, levels/, economy/, ui-ux/, narrative/
+- **Version Control**: Track design iterations and decisions
+- **Visual Assets**: Reference concept art and prototypes in `assets/` subfolder
+
+## CLAUDE.md Management Principles
+
+### Core Principles
+- **Keep It Essential**: Only include critical project information
+- **Link to Details**: Use links for detailed information
+- **Quick Reference**: Should serve as a quick reference guide
+- **No Duplication**: Avoid duplicating content from subdocuments
+
+### What Belongs in CLAUDE.md
+- Project overview (1-2 lines)
+- Essential Unity commands
+- Critical file locations
+- Documentation index links
+- Path shortcuts reference
+
+### What Should Be Moved to Subdocuments
+- Detailed command explanations → `/reference/`
+- Extended guidelines → `/guidelines/`
+- Complex configurations → `/architecture/`
+- Step-by-step procedures → `/guides/`
+
+## Git Commit Guidelines
+
+### Commit Message Format
+When creating git commits for this project:
+
+1. **Use conventional commit format**: `type: description`
+2. **Types**: feat, fix, docs, style, refactor, test, chore
+3. **Keep subject line under 50 characters**
+4. **Provide detailed body for complex changes**
+5. **Reference issues when applicable**
+
+### Important Note
+**DO NOT** include Claude Code signatures or co-authorship lines in commit messages:
+- ❌ Never add: `🤖 Generated with Claude Code`
+- ❌ Never add: `Co-Authored-By: Claude <noreply@anthropic.com>`
+- ✅ Keep commits clean and professional
+- ✅ Focus on describing the actual changes made

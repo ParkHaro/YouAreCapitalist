@@ -57,104 +57,23 @@ Unity 6000.2.0f1 프로젝트 "YouAreCapitalist"는 모바일 및 PC 플랫폼�
 - 에디터 스크립트: `Assets/Editor/`
 - 입력 액션: `Assets/InputSystem_Actions.inputactions`
 
-## 중요 문서화 규칙
+## 빠른 참조
 
-### 문서 구조 체계
-모든 문서(CLAUDE.md 제외)는 `.claude/doc/` 디렉토리에 저장되어야 합니다:
+- [📁 경로 단축어](.claude/doc/reference/PATH_SHORTCUTS_KOR.md) - 문서 경로 약어
+- [📝 Git 로그 명령어](.claude/doc/reference/GIT_LOG_DOCUMENTATION_KOR.md) - 자동 git 히스토리 문서화
 
-```
-.claude/
-├── doc/
-│   ├── guidelines/       # 개발 가이드라인
-│   │   ├── DOCUMENTATION_GUIDELINES.md
-│   │   └── DOCUMENTATION_GUIDELINES_KOR.md
-│   ├── architecture/     # 아키텍처 문서
-│   ├── api/             # API 문서
-│   ├── guides/          # 사용자 가이드
-│   └── reference/       # 참조 문서
-└── CLAUDE.md           # 유일한 루트 문서
-```
+## 문서 표준
 
-### 문서 메타데이터
-모든 `.md` 파일(`_KOR` 버전 제외)은 Claude Code용 메타데이터 헤더를 포함해야 합니다:
+⚠️ **중요**: 모든 문서는 이중 언어 시스템(영어 + 한국어)을 따라야 합니다.
+자세한 규칙은 [문서 가이드라인](.claude/doc/guidelines/DOCUMENTATION_GUIDELINES_KOR.md) 참조.
 
-```yaml
----
-category: [guidelines|architecture|api|guides|reference]
-tags: [unity, documentation, mobile, etc]
-related: [linked-doc1.md, linked-doc2.md]
-parent: parent-doc.md
-created: YYYY-MM-DD
-updated: YYYY-MM-DD
-priority: [high|medium|low]
----
-```
+## 문서 인덱스
 
-### 문서 네비게이션 구조
-모든 문서는 네비게이션 섹션을 포함해야 합니다:
-
-```markdown
-## 📍 네비게이션
-
-[↩️ 상위 문서](./parent-document_KOR.md) | [🏠 홈](../../CLAUDE_KOR.md)
-
-### 🔗 관련 문서
-- [관련 문서 1](./related1_KOR.md) - 간단한 설명
-- [관련 문서 2](./related2_KOR.md) - 간단한 설명
-
-### 📚 이 섹션의 문서들
-- [하위 문서 1](./child1_KOR.md)
-- [하위 문서 2](./child2_KOR.md)
-```
-
-### 문서 계층 구조 및 인덱싱
-1. **루트 레벨**: CLAUDE.md (메인 인덱스)
-2. **카테고리 인덱스**: 각 카테고리 폴더에 INDEX.md 필수
-3. **상호 참조**: 메타데이터 `related` 필드로 연결
-4. **경로 표시**: 네비게이션에 문서 경로 표시
-
-### 이중 언어 문서 시스템
-모든 문서 파일은 반드시 한국어 버전을 가져야 합니다:
-- 기본: `[filename].md` - Claude Code 파싱용 (메타데이터 포함)
-- 한국어: `[filename]_KOR.md` - 사용자 읽기용 (메타데이터 없음)
-
-문서 생성이나 수정 시:
-1. 항상 두 버전을 동시에 생성/업데이트
-2. 언어 간 1:1 콘텐츠 매칭 보장
-3. 한 버전만 생성 금지
-4. 삭제 시 두 파일 모두 제거
-5. 적절한 `.claude/doc/` 하위 디렉토리에 저장
-
-### 문서 인덱스
-주요 문서 링크:
 - [📚 메인 문서 인덱스](.claude/doc/INDEX_KOR.md) - 전체 문서 카탈로그
-- [문서 가이드라인](.claude/doc/guidelines/DOCUMENTATION_GUIDELINES_KOR.md)
-- [프로젝트 아키텍처](.claude/doc/architecture/INDEX_KOR.md)
-- [API 참조](.claude/doc/api/INDEX_KOR.md)
-
-### 언어 간 링크 규칙
-**중요**: 링크는 언어 버전을 준수해야 합니다:
-- `.md` 파일에서: 다른 `.md` 파일로 링크
-- `_KOR.md` 파일에서: 다른 `_KOR.md` 파일로 링크
-
-예시:
-```markdown
-<!-- README.md에서 -->
-See [API Guide](.claude/doc/api/API_GUIDE.md)
-
-<!-- README_KOR.md에서 -->
-참조: [API 가이드](.claude/doc/api/API_GUIDE_KOR.md)
-```
-
-### 양방향 네비게이션
-모든 문서 쌍은 네비게이션 링크를 포함해야 합니다:
-```markdown
-<!-- document.md에서 -->
-[🇰🇷 한국어 버전](./document_KOR.md)
-
-<!-- document_KOR.md에서 -->
-[🇬🇧 English Version](./document.md)
-```
+- [📖 문서 가이드라인](.claude/doc/guidelines/DOCUMENTATION_GUIDELINES_KOR.md)
+- [🏗️ 프로젝트 아키텍처](.claude/doc/architecture/INDEX_KOR.md)
+- [🔌 API 참조](.claude/doc/api/INDEX_KOR.md)
+- [🎮 게임 디자인 문서](.claude/doc/gamedesign/INDEX_KOR.md)
 
 ## 개발 고려사항
 
@@ -188,3 +107,4 @@ See [API Guide](.claude/doc/api/API_GUIDE.md)
 - `.meta` 파일은 연관된 에셋과 함께 커밋
 - `Library/`, `Temp/`, `Logs/`, `obj/` 폴더는 절대 커밋 금지
 - 프로젝트는 Unity 6000.2.0f1 사용 - 버전 호환성 확인 필요
+

@@ -1,0 +1,18 @@
+{
+  "lastUpdate": "2025-08-29T00:00:00Z",
+  "lastProcessedWeek": "W35",
+  "lastProcessedFile": "2025-F0826-T0901-W35.md",
+  "fileFormat": "YYYY-FMMDD-TMMDD-WNN",
+  "formatDescription": {
+    "YYYY": "Year (4 digits)",
+    "FMMDD": "From Month Day (F + 4 digits)",
+    "TMMDD": "To Month Day (T + 4 digits)",
+    "WNN": "Week Number (W + 2 digits, ISO 8601)"
+  },
+  "nextWeek": {
+    "weekNumber": "W36",
+    "startDate": "2025-09-02",
+    "endDate": "2025-09-08",
+    "fileName": "2025-F0902-T0908-W36.md"
+  }
+}

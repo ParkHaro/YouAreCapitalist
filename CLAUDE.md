@@ -57,104 +57,23 @@ Unity 6000.2.0f1 project "YouAreCapitalist" configured for mobile and PC platfor
 - Editor scripts: `Assets/Editor/`
 - Input actions: `Assets/InputSystem_Actions.inputactions`
 
-## Critical Documentation Rules
+## Quick References
 
-### Documentation Organization Structure
-All documentation (except CLAUDE.md) must be stored in `.claude/doc/` directory:
+- [📁 Path Shortcuts](.claude/doc/reference/PATH_SHORTCUTS.md) - Documentation path abbreviations
+- [📝 Git Log Commands](.claude/doc/reference/GIT_LOG_DOCUMENTATION.md) - Automated git history documentation
 
-```
-.claude/
-├── doc/
-│   ├── guidelines/       # 개발 가이드라인
-│   │   ├── DOCUMENTATION_GUIDELINES.md
-│   │   └── DOCUMENTATION_GUIDELINES_KOR.md
-│   ├── architecture/     # 아키텍처 문서
-│   ├── api/             # API 문서
-│   ├── guides/          # 사용자 가이드
-│   └── reference/       # 참조 문서
-└── CLAUDE.md           # 유일한 루트 문서
-```
+## Documentation Standards
 
-### Documentation Metadata
-All `.md` files (except `_KOR` versions) must include metadata header for Claude Code:
+⚠️ **Important**: All documentation must follow dual-language system (English + Korean).
+See [Documentation Guidelines](.claude/doc/guidelines/DOCUMENTATION_GUIDELINES.md) for complete rules.
 
-```yaml
----
-category: [guidelines|architecture|api|guides|reference]
-tags: [unity, documentation, mobile, etc]
-related: [linked-doc1.md, linked-doc2.md]
-parent: parent-doc.md
-created: YYYY-MM-DD
-updated: YYYY-MM-DD
-priority: [high|medium|low]
----
-```
+## Documentation Index
 
-### Document Navigation Structure
-Every document must include a navigation section with:
-
-```markdown
-## 📍 Navigation
-
-[↩️ Back to Parent](./parent-document.md) | [🏠 Home](../../CLAUDE.md)
-
-### 🔗 Related Documents
-- [Related Doc 1](./related1.md) - Brief description
-- [Related Doc 2](./related2.md) - Brief description
-
-### 📚 In This Section
-- [Child Doc 1](./child1.md)
-- [Child Doc 2](./child2.md)
-```
-
-### Document Hierarchy & Indexing
-1. **Root Level**: CLAUDE.md (main index)
-2. **Category Index**: Each category folder must have INDEX.md
-3. **Cross-References**: Use metadata `related` field for connections
-4. **Breadcrumb Trail**: Show document path in navigation
-
-### Dual-Language Documentation System
-Every documentation file MUST have a corresponding Korean version:
-- Primary: `[filename].md` - For Claude Code parsing (includes metadata)
-- Korean: `[filename]_KOR.md` - For human readers (no metadata)
-
-When creating or modifying ANY documentation:
-1. Always create/update both versions simultaneously
-2. Ensure 1:1 content matching between languages
-3. Never create one without the other
-4. When deleting, remove both files
-5. Store in appropriate `.claude/doc/` subdirectory
-
-### Documentation Index
-Key documentation links:
 - [📚 Main Documentation Index](.claude/doc/INDEX.md) - Complete documentation catalog
-- [Documentation Guidelines](.claude/doc/guidelines/DOCUMENTATION_GUIDELINES.md)
-- [Project Architecture](.claude/doc/architecture/INDEX.md)
-- [API Reference](.claude/doc/api/INDEX.md)
-
-### Cross-Language Link Rules
-**CRITICAL**: Links must respect language versions:
-- In `.md` files: Link to other `.md` files
-- In `_KOR.md` files: Link to other `_KOR.md` files
-
-Example:
-```markdown
-<!-- In README.md -->
-See [API Guide](.claude/doc/api/API_GUIDE.md)
-
-<!-- In README_KOR.md -->
-참조: [API 가이드](.claude/doc/api/API_GUIDE_KOR.md)
-```
-
-### Bidirectional Navigation
-Every document pair must include navigation links:
-```markdown
-<!-- In document.md -->
-[🇰🇷 한국어 버전](./document_KOR.md)
-
-<!-- In document_KOR.md -->
-[🇬🇧 English Version](./document.md)
-```
+- [📖 Documentation Guidelines](.claude/doc/guidelines/DOCUMENTATION_GUIDELINES.md)
+- [🏗️ Project Architecture](.claude/doc/architecture/INDEX.md)
+- [🔌 API Reference](.claude/doc/api/INDEX.md)
+- [🎮 Game Design Documents](.claude/doc/gamedesign/INDEX.md)
 
 ## Development Considerations
 
@@ -188,3 +107,4 @@ Every document pair must include navigation links:
 - `.meta` files must be committed with their associated assets
 - Never commit `Library/`, `Temp/`, `Logs/`, or `obj/` folders
 - Project uses Unity 6000.2.0f1 - ensure version compatibility
+
