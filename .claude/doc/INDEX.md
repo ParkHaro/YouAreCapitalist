@@ -1,56 +1,54 @@
 ---
-category: root
-tags: [index, documentation, main]
+category: documentation
+tags: [index, documentation, root]
 related: []
-parent: ../../CLAUDE.md
-created: 2025-08-28
-updated: 2025-08-29
+parent: ../CLAUDE.md
+created: 2025-08-30
+updated: 2025-08-30
 priority: high
 ---
 
-# Documentation Index
+# Project Documentation
 
-[🇰🇷 한국어 버전](./INDEX_KOR.md)
+[🇰🇷 Korean Version](./INDEX_KOR.md)
 
 ## 📍 Navigation
 
-[🏠 Home](../../CLAUDE.md)
+[🏠 Home](../CLAUDE.md)
 
 ## 📚 Documentation Categories
 
-### 📋 [Guidelines](./guidelines/INDEX.md)
-Development guidelines and standards for the project
-- [Documentation Guidelines](./guidelines/DOCUMENTATION_GUIDELINES.md) - Documentation standards and dual-language system
+### 🏗️ [Architecture Documentation](./architecture/INDEX.md)
 
-### 🏗️ [Architecture](./architecture/INDEX.md)
-System architecture and design documentation
-- (Coming soon)
+System architecture, design patterns, and technical specifications
 
-### 🎮 [Game Design](./gamedesign/INDEX.md)
-Game design documents and specifications
-- [Capitalism Market Simulation](./gamedesign/capitalism-game-design-doc.md) - Core game design document
+**Documents**: 5
 
-### 🔌 [API Reference](./api/INDEX.md)
-API documentation and references
-- (Coming soon)
+### 📚 [Reference Documentation](./reference/INDEX.md)
 
-### 📖 [Guides](./guides/INDEX.md)
-User guides and tutorials
-- (Coming soon)
+Technical references and lookup materials
 
-### 📑 [Reference](./reference/INDEX.md)
-Reference materials and specifications
-- (Coming soon)
+**Documents**: 3
 
-## 🔍 Quick Links
+### 🎮 [Game Design Documentation](./gamedesign/INDEX.md)
 
-### Essential Documents
-- [CLAUDE.md](../../CLAUDE.md) - Main project guidance
-- [Documentation Guidelines](./guidelines/DOCUMENTATION_GUIDELINES.md) - How to write docs
+Game mechanics, systems, and design specifications
 
-### By Tag
-- `#unity` - Unity-specific documentation
-- `#mobile` - Mobile platform guides
-- `#architecture` - System design docs
-- `#api` - API references
-- `#game-design` - Game design documents
+**Documents**: 1
+
+### 📋 [Development Guidelines](./guidelines/INDEX.md)
+
+Standards, processes, and best practices
+
+**Documents**: 1
+
+## 🔧 Documentation Tools
+
+- [Scripts](../scripts/README.md) - Automation tools for document management
+- [Guidelines](./guidelines/INDEX.md) - Documentation standards and processes
+
+## 📊 Overview
+
+- **Total Categories**: 4
+- **Total Documents**: 10
+- **Last Updated**: 2025-08-30

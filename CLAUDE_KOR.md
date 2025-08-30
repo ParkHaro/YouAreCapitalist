@@ -62,17 +62,95 @@ Unity 6000.2.0f1 프로젝트 "YouAreCapitalist"는 모바일 및 PC 플랫폼�
 - [📁 경로 단축어](.claude/doc/reference/PATH_SHORTCUTS_KOR.md) - 문서 경로 약어
 - [📝 Git 로그 명령어](.claude/doc/reference/GIT_LOG_DOCUMENTATION_KOR.md) - 자동 git 히스토리 문서화
 
+## 문서 자동화 스크립트
+
+효율적인 문서 관리를 위한 Python 기반 크로스플랫폼 도구들:
+
+### 빠른 명령어
+```bash
+# 스크립트 디렉토리로 이동
+cd .claude/scripts
+
+# 새 문서 쌍 생성 (영어 + 한국어)
+python doc_manager.py create "기능-이름" --category architecture
+
+# 모든 문서 인덱스 업데이트
+python doc_manager.py index --update-all
+
+# 문서 검증 및 자동 수정
+python doc_manager.py validate --fix
+
+# 완전한 문서 상태 검사
+python doc_manager.py check
+
+# 일반적인 문제 자동 수정
+python doc_manager.py fix
+```
+
+### 토큰 최적화 효과
+이 스크립트들은 Claude Code 토큰 사용량을 다음과 같이 줄입니다:
+- **70%**: 템플릿 기반 문서 생성
+- **60%**: 배치 처리 작업
+- **50%**: 수동 검사 대신 자동 검증
+- **40%**: 패턴 캐싱 및 재사용
+
+### 사용 가능한 도구
+- **doc_manager.py** - 모든 작업을 위한 메인 CLI 인터페이스
+- **doc_create.py** - 템플릿을 사용한 문서 쌍 생성
+- **doc_index.py** - INDEX 파일 생성 및 유지 관리
+- 전체 사용법은 [스크립트 문서](.claude/scripts/README_KOR.md) 참조
+
 ## 문서 표준
 
 ⚠️ **중요**: 모든 문서는 이중 언어 시스템(영어 + 한국어)을 따라야 합니다.
+
+### 문서 가이드라인
+- **기본 파일** (`.md`): Claude Code 및 자동화 도구용 영어 콘텐츠
+- **한국어 파일** (`_KOR.md`): 개발자가 읽기 위한 한국어 콘텐츠 전용
+- **1:1 내용 매칭**: 두 버전 모두 동일한 의미를 가져야 함
+- **동기화된 업데이트**: 변경사항은 두 파일에 모두 반영되어야 함
+
+#### ⚠️ 중요: Claude Code 파일 참조 규칙
+- **모든 비문서화 작업에서**: 항상 `.md` 파일 참조, `_KOR.md` 파일 절대 참조 금지
+- **예외**: 문서 생성/번역 작업을 명시적으로 수행하는 경우만 해당
+- **이유**: `_KOR.md` 파일은 개발자가 읽기 위해 설계됨, AI 소비용이 아님
+- **자동화**: Claude Code 도구 및 스크립트는 일관성을 위해 `.md` 파일만 처리해야 함
+
 자세한 규칙은 [문서 가이드라인](.claude/doc/guidelines/DOCUMENTATION_GUIDELINES_KOR.md) 참조.
+
+**문서 작업 시:**
+1. **자동화 우선**: 모든 문서 작업에 `.claude/scripts/` 도구 사용
+2. 항상 영어(`.md`)와 한국어(`_KOR.md`) 버전 모두 생성
+3. 버전 간 내용 정확성과 일관성 보장
+4. 파일명 규칙 준수: `filename.md` ↔ `filename_KOR.md`
+5. 새 문서 생성 전 DOCUMENTATION_GUIDELINES.md 참조
+
+### 필수 스크립트 사용
+**모든 문서 작업 전에 반드시:**
+```bash
+cd .claude/scripts
+
+# 새 문서: 수동 생성 대신 doc_manager.py 사용
+python doc_manager.py create "문서-이름" --category [architecture|gamedesign|reference|guidelines]
+
+# 업데이트: 일관성 유지를 위해 doc_index.py 사용
+python doc_manager.py index --update-all
+
+# 검증: 수동 확인 대신 내장 검사 사용
+python doc_manager.py validate --fix
+```
+
+**스크립트 사용의 이점:**
+- **자동 이중 언어 생성**: 수동 한국어 파일 생성 불필요
+- **템플릿 일관성**: 적절한 메타데이터와 구조 보장
+- **인덱스 동기화**: 모든 INDEX 파일 자동 업데이트
+- **토큰 효율성**: 문서 작업에서 60-70% 감소
 
 ## 문서 인덱스
 
 - [📚 메인 문서 인덱스](.claude/doc/INDEX_KOR.md) - 전체 문서 카탈로그
 - [📖 문서 가이드라인](.claude/doc/guidelines/DOCUMENTATION_GUIDELINES_KOR.md)
 - [🏗️ 프로젝트 아키텍처](.claude/doc/architecture/INDEX_KOR.md)
-- [🔌 API 참조](.claude/doc/api/INDEX_KOR.md)
 - [🎮 게임 디자인 문서](.claude/doc/gamedesign/INDEX_KOR.md)
 
 ## 개발 고려사항

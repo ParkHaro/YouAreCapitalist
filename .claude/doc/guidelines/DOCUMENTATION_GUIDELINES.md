@@ -41,7 +41,20 @@ Every documentation file must have a corresponding Korean version:
 ### Purpose
 
 - **Primary Files** (`*.md`): Optimized for Claude Code parsing and automated processing
-- **Korean Files** (`*_KOR.md`): Human-readable documentation for Korean-speaking developers
+- **Korean Files** (`*_KOR.md`): Human-readable documentation for developers only (NOT for AI consumption)
+
+#### ⚠️ CRITICAL: Claude Code Reference Rules
+
+**For ALL non-documentation tasks, Claude Code must:**
+- Always reference `.md` files, never `_KOR.md` files
+- Use English documentation for analysis, research, and implementation
+- Only access `_KOR.md` files when explicitly working on documentation translation tasks
+
+**Rationale:**
+- `_KOR.md` files are designed exclusively for human developers
+- Ensures consistency in AI processing and automation
+- Prevents language mixing in automated workflows
+- Maintains separation between human and AI documentation consumption
 
 ### Implementation Checklist
 

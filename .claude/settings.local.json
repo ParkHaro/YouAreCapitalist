@@ -11,7 +11,9 @@
       "Bash(cmd.exe:*)",
       "Bash(powershell:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(python:*)",
+      "Bash(tree:*)"
     ],
     "deny": [],
     "ask": []
