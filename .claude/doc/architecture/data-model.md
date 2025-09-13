@@ -770,6 +770,210 @@ public struct CompressedStockData : IComponentData
 }
 ```
 
+## 6. Entity Generation Parameters
+
+### 6.1 Population Generation Configuration
+
+#### Distribution Parameters
+```csharp
+[System.Serializable]
+public struct PopulationGenerationConfig
+{
+    [Header("Demographics")]
+    public AnimationCurve ageDistribution;        // Population pyramid (18-80 years)
+    public AnimationCurve incomeDistribution;     // Pareto distribution curve
+    public float genderRatio;                     // Male/Female ratio (0.5 = 50/50)
+    public AnimationCurve educationDistribution;  // Education level curve
+    
+    [Header("Economic Parameters")]
+    public float baseIncomeMultiplier;            // Base salary multiplier
+    public Vector2 savingsRateRange;              // Min/max savings rates
+    public Vector2 consumptionRateRange;          // Min/max consumption rates
+    public Vector2 riskToleranceRange;            // Min/max risk tolerance
+    
+    [Header("Behavioral Parameters")]
+    public Vector2 optimismRange;                 // Optimism/pessimism range
+    public Vector2 conformityRange;               // Conformity tendency range
+    public Vector2 loyaltyRange;                  // Brand loyalty range
+    public Vector2 informationRange;              // Information level range
+}
+```
+
+#### Social Class Distribution
+```csharp
+[System.Serializable]
+public struct SocialClassDistribution
+{
+    public PopulationClass socialClass;
+    public float probability;                     // Generation probability
+    public Vector2 incomeRange;                   // Income range for this class
+    public Vector2 wealthMultiplierRange;         // Wealth accumulation multiplier
+    public float employmentRate;                  // Employment probability
+}
+
+// Default realistic distribution
+public static readonly SocialClassDistribution[] DefaultClassDistribution = 
+{
+    new() { socialClass = PopulationClass.LowIncome,   probability = 0.60f, incomeRange = new(100f, 250f),  employmentRate = 0.85f },
+    new() { socialClass = PopulationClass.LowerMiddle, probability = 0.25f, incomeRange = new(250f, 400f),  employmentRate = 0.92f },
+    new() { socialClass = PopulationClass.MiddleClass, probability = 0.10f, incomeRange = new(400f, 700f),  employmentRate = 0.95f },
+    new() { socialClass = PopulationClass.UpperMiddle, probability = 0.04f, incomeRange = new(700f, 1200f), employmentRate = 0.97f },
+    new() { socialClass = PopulationClass.HighIncome,  probability = 0.01f, incomeRange = new(1200f, 5000f), employmentRate = 0.98f }
+};
+```
+
+### 6.2 Company Generation Configuration
+
+#### Industry Parameters
+```csharp
+[System.Serializable]
+public struct IndustryGenerationConfig
+{
+    public IndustryType industry;
+    public float weight;                          // Generation probability weight
+    public Vector2 revenueRange;                  // Revenue range (monthly)
+    public Vector2 employeeRange;                 // Employee count range
+    public float publicTradingProbability;        // Chance to be publicly traded
+    public Vector2 profitMarginRange;             // Profit margin range
+    public float innovationTendency;              // R&D investment tendency
+}
+
+// Realistic industry distribution
+public static readonly IndustryGenerationConfig[] DefaultIndustryDistribution =
+{
+    new() { industry = IndustryType.Retail,        weight = 0.25f, revenueRange = new(50f, 2000f),   publicTradingProbability = 0.05f },
+    new() { industry = IndustryType.Manufacturing, weight = 0.20f, revenueRange = new(200f, 10000f), publicTradingProbability = 0.15f },
+    new() { industry = IndustryType.Technology,    weight = 0.15f, revenueRange = new(100f, 50000f), publicTradingProbability = 0.30f },
+    new() { industry = IndustryType.Construction,  weight = 0.10f, revenueRange = new(300f, 5000f),  publicTradingProbability = 0.08f },
+    new() { industry = IndustryType.Finance,       weight = 0.10f, revenueRange = new(150f, 20000f), publicTradingProbability = 0.25f },
+    new() { industry = IndustryType.Healthcare,    weight = 0.05f, revenueRange = new(200f, 3000f),  publicTradingProbability = 0.12f },
+    new() { industry = IndustryType.Education,     weight = 0.05f, revenueRange = new(100f, 1000f),  publicTradingProbability = 0.02f },
+    new() { industry = IndustryType.Transportation, weight = 0.05f, revenueRange = new(150f, 8000f), publicTradingProbability = 0.10f },
+    new() { industry = IndustryType.Agriculture,   weight = 0.05f, revenueRange = new(80f, 800f),    publicTradingProbability = 0.01f }
+};
+```
+
+#### Company Size Parameters
+```csharp
+[System.Serializable]
+public struct CompanySizeParameters
+{
+    public CompanySize size;
+    public float probability;                     // Generation probability
+    public Vector2 employeeRange;                 // Employee count range
+    public Vector2 revenueMultiplierRange;        // Revenue multiplier range
+    public float publicTradingChance;             // Probability of being publicly traded
+    public Vector2 ageRange;                      // Company age range (years)
+}
+
+public static readonly CompanySizeParameters[] DefaultSizeDistribution =
+{
+    new() { size = CompanySize.Micro,        probability = 0.40f, employeeRange = new(1, 10),     publicTradingChance = 0.00f },
+    new() { size = CompanySize.Small,        probability = 0.35f, employeeRange = new(10, 50),    publicTradingChance = 0.05f },
+    new() { size = CompanySize.Medium,       probability = 0.20f, employeeRange = new(50, 300),   publicTradingChance = 0.25f },
+    new() { size = CompanySize.Large,        probability = 0.04f, employeeRange = new(300, 1000), publicTradingChance = 0.70f },
+    new() { size = CompanySize.Conglomerate, probability = 0.01f, employeeRange = new(1000, 5000), publicTradingChance = 0.95f }
+};
+```
+
+### 6.3 Market Generation Parameters
+
+#### Market Configuration
+```csharp
+[System.Serializable]
+public struct MarketGenerationConfig
+{
+    [Header("Market Size")]
+    public float baseMarketSize;                  // Base market size (monthly volume)
+    public Vector2 marketGrowthRange;             // Annual growth rate range
+    public Vector2 volatilityRange;               // Price volatility range
+    
+    [Header("Supply & Demand")]
+    public Vector2 initialDemandRange;            // Starting demand level
+    public Vector2 initialSupplyRange;            // Starting supply level
+    public Vector2 priceElasticityRange;          // Demand price elasticity
+    
+    [Header("Market Structure")]
+    public MarketStructure defaultStructure;      // Default market structure
+    public Vector2 barrierToEntryRange;           // Barrier to entry level
+    public Vector2 brandLoyaltyRange;             // Consumer brand loyalty
+}
+```
+
+### 6.4 Random Generation Utilities
+
+#### Statistical Distribution Helpers
+```csharp
+public static class DistributionUtilities
+{
+    /// <summary>
+    /// Sample from Pareto distribution (80/20 rule)
+    /// </summary>
+    public static float SamplePareto(Unity.Mathematics.Random random, float alpha = 1.16f)
+    {
+        float uniform = random.NextFloat(0.001f, 0.999f);
+        return math.pow(1f - uniform, -1f / alpha);
+    }
+    
+    /// <summary>
+    /// Sample from normal distribution using Box-Muller transform
+    /// </summary>
+    public static float SampleNormal(Unity.Mathematics.Random random, float mean = 0f, float stdDev = 1f)
+    {
+        float u1 = random.NextFloat(0.001f, 0.999f);
+        float u2 = random.NextFloat(0.001f, 0.999f);
+        float z0 = math.sqrt(-2f * math.log(u1)) * math.cos(2f * math.PI * u2);
+        return mean + z0 * stdDev;
+    }
+    
+    /// <summary>
+    /// Sample from weighted array based on probabilities
+    /// </summary>
+    public static T SampleWeighted<T>(Unity.Mathematics.Random random, T[] items, float[] weights)
+    {
+        float totalWeight = 0f;
+        for (int i = 0; i < weights.Length; i++)
+            totalWeight += weights[i];
+            
+        float randomValue = random.NextFloat() * totalWeight;
+        
+        for (int i = 0; i < items.Length; i++)
+        {
+            randomValue -= weights[i];
+            if (randomValue <= 0f)
+                return items[i];
+        }
+        
+        return items[items.Length - 1];
+    }
+}
+```
+
+### 6.5 Validation Parameters
+
+#### Generation Quality Metrics
+```csharp
+[System.Serializable]
+public struct GenerationValidationConfig
+{
+    [Header("Population Validation")]
+    public Vector2 expectedParetoRange;           // Expected Pareto ratio (0.7-0.9)
+    public Vector2 expectedUnemploymentRange;     // Expected unemployment rate
+    public Vector2 expectedAgeMedianRange;        // Expected median age
+    
+    [Header("Company Validation")]
+    public Vector2 expectedProfitabilityRange;    // Expected average profitability
+    public Vector2 expectedPublicTradingRange;    // Expected public trading percentage
+    public int minimumEmployeesPerIndustry;       // Min total employees per industry
+    
+    [Header("Market Validation")]
+    public float minimumMarketLiquidity;          // Minimum market activity level
+    public Vector2 expectedPriceStabilityRange;   // Expected price stability
+}
+```
+
 ## 다음 문서
+- [Entity Generation System](./entity-generation.md) - Detailed generation algorithms
+- [Simulation System](./simulation-system.md) - How entities interact
 - [UI 시스템 설계](./ui-system.md)
 - [시스템 통합 가이드](./integration-guide.md)

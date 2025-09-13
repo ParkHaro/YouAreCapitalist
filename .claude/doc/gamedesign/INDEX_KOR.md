@@ -11,6 +11,13 @@
 ### 메인 디자인 문서
 - [자본주의 시장 시뮬레이션 게임](./capitalism-game-design-doc_KOR.md) - 자본주의 시뮬레이션 게임의 완전한 게임 디자인 문서
 
+### 핵심 게임플레이 시스템
+- [핵심 게임플레이 루프](./core-gameplay-loop_KOR.md) - 3단계 루프 시스템 아키텍처와 플레이어 진행 프레임워크
+- [투자 루프 메커닉](./investment-loop-mechanics_KOR.md) - 시장 분석과 자동화를 포함한 상세한 투자 시스템
+- [기업 통제 루프](./corporate-control-loop_KOR.md) - CEO 통제와 주주 거버넌스를 통한 간접 경영
+- [자본 증식 루프](./capital-growth-loop_KOR.md) - 복리와 레버리지 기반 자본 확장 메커닉
+- [시장 영향력 루프](./market-influence-loop_KOR.md) - 정치적 로비와 규제 포획 시스템
+
 ## 📂 디자인 카테고리 (계획중)
 
 ### mechanics/ - 게임 메커니즘

@@ -21,6 +21,13 @@ priority: high
 ### Main Design Document
 - [Capitalism Market Simulation Game](./capitalism-game-design-doc.md) - Complete game design document for the capitalism simulation game
 
+### Core Gameplay Systems
+- [Core Gameplay Loop](./core-gameplay-loop.md) - Three-tier loop system architecture and player progression framework
+- [Investment Loop Mechanics](./investment-loop-mechanics.md) - Detailed investment system with market analysis and automation
+- [Corporate Control Loop](./corporate-control-loop.md) - Indirect management through CEO control and shareholder governance
+- [Capital Growth Loop](./capital-growth-loop.md) - Compound interest and leverage-based capital scaling mechanics
+- [Market Influence Loop](./market-influence-loop.md) - Political lobbying and regulatory capture systems
+
 ## 📂 Design Categories (Planned)
 
 ### mechanics/ - Game Mechanics

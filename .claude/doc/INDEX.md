@@ -4,7 +4,7 @@ tags: [index, documentation, root]
 related: []
 parent: ../CLAUDE.md
 created: 2025-08-30
-updated: 2025-08-30
+updated: 2025-09-13
 priority: high
 ---
 
@@ -26,9 +26,9 @@ System architecture, design patterns, and technical specifications
 
 ### 📚 [Reference Documentation](./reference/INDEX.md)
 
-Technical references and lookup materials
+Technical references, work management protocols, and lookup materials
 
-**Documents**: 3
+**Documents**: 8
 
 ### 🎮 [Game Design Documentation](./gamedesign/INDEX.md)
 

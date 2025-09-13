@@ -100,6 +100,35 @@ These scripts reduce Claude Code token usage by:
 - **doc_index.py** - Generate and maintain INDEX files
 - See [Scripts Documentation](.claude/scripts/README.md) for complete usage
 
+## Work Process Management
+
+### 🚨 MANDATORY: Pre-Work Planning Protocol
+**ALL development work MUST follow structured planning process:**
+
+1. **Work Planning Consultation (15-20 minutes)**
+   - **Reference**: [Work Planning Protocol](.claude/doc/reference/WORK_PLANNING_PROTOCOL.md)
+   - **Purpose**: Prevent scope creep, ensure proper architecture, minimize rework
+   - **Trigger**: ANY coding task, regardless of perceived complexity
+   - **Quality Gate**: No coding begins until work plan is complete and approved
+
+2. **Session Management Setup**
+   - **Reference**: [Work Session Tracker](.claude/doc/reference/WORK_SESSION_TRACKER.md)
+   - **Purpose**: Maintain context across session boundaries, enable seamless continuation
+   - **Components**: Session initialization, checkpoint scheduling, progress tracking
+
+3. **Checkpoint Creation Protocol**
+   - **Reference**: [Checkpoint Protocol](.claude/doc/reference/CHECKPOINT_PROTOCOL.md)
+   - **Purpose**: Preserve work state, enable <5 minute context recovery
+   - **Schedule**: Micro (30min), Standard (2h), Major (milestones), Emergency (on-demand)
+
+### Work Process Templates
+- [Work Plan Template](.claude/doc/templates/WORK_PLAN_TEMPLATE.md) - Structured project planning
+- [Session Log Template](.claude/doc/templates/SESSION_LOG_TEMPLATE.md) - Session documentation
+- [Checkpoint Template](.claude/doc/templates/CHECKPOINT_TEMPLATE.md) - State preservation
+
+### Process Integration with Development Workflow
+The work planning protocol integrates with [Development Workflow](.claude/doc/reference/DEVELOPMENT_WORKFLOW.md) as the mandatory first phase before technical implementation.
+
 ## Documentation Standards
 
 ⚠️ **Important**: All documentation must follow dual-language system (English + Korean).

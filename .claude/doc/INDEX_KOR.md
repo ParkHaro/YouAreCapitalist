@@ -16,9 +16,9 @@ System architecture, design patterns, and technical specifications
 
 ### 📚 [레퍼런스 문서](./reference/INDEX_KOR.md)
 
-Technical references and lookup materials
+기술 참조 자료, 작업 관리 프로토콜, 조회 자료
 
-**문서 수**: 3
+**문서 수**: 8
 
 ### 🎮 [게임 디자인 문서](./gamedesign/INDEX_KOR.md)
 
@@ -40,5 +40,6 @@ Standards, processes, and best practices
 ## 📊 개요
 
 - **총 카테고리 수**: 4
-- **총 문서 수**: 10
-- **마지막 업데이트**: 2025-08-30
+- **총 문서 수**: 15 (레퍼런스 문서 5개 신규 추가)
+- **마지막 업데이트**: 2025-09-13
+- **신규 추가**: 작업 계획 프로토콜, 세션 추적, 체크포인트 시스템
