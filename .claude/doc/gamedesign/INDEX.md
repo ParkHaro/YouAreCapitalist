@@ -4,7 +4,7 @@ tags: [game-design, documentation, index]
 related: []
 parent: ../INDEX.md
 created: 2025-08-28
-updated: 2025-08-28
+updated: 2025-09-13
 priority: high
 ---
 
@@ -28,37 +28,41 @@ priority: high
 - [Capital Growth Loop](./capital-growth-loop.md) - Compound interest and leverage-based capital scaling mechanics
 - [Market Influence Loop](./market-influence-loop.md) - Political lobbying and regulatory capture systems
 
-## 📂 Design Categories (Planned)
+## 🎯 Game Mechanics and Systems
 
-### mechanics/ - Game Mechanics
-- Core gameplay loops
-- Player actions and interactions
-- Resource management systems
+### Economic Balance and Parameters
+- **[Economy Balance Model](./economy-balance-model.md)** - Economic balancing parameters, formulas, and real-world calibration
 
-### systems/ - Game Systems  
-- Economic simulation
-- AI behavior patterns
-- Market dynamics
+### Player Progression and Learning
+- **[Progression System](./progression-system.md)** - Player advancement, unlock system, and difficulty scaling
+- **[Tutorial and Onboarding](./tutorial-onboarding.md)** - Learning system, educational framework, and adaptive tutoring
 
-### levels/ - Level Design
-- Progression structure
-- Difficulty curves
-- Scenario design
+### AI and Simulation
+- **[AI Behavior Patterns](./ai-behavior-patterns.md)** - AI decision-making algorithms for populations, companies, and investors
 
-### economy/ - Economy System
-- Currency and resources
-- Trading mechanisms
-- Market balancing
+### User Interface and Experience
+- **[UI/UX Design](./ui-ux-design.md)** - Interface design specifications, mobile optimization, and accessibility
 
-### ui-ux/ - UI/UX Design
-- Interface layouts
-- User experience flows
-- Information visualization
+### Dynamic Events and Challenges
+- **[Events and Crisis System](./events-crisis-system.md)** - Event system, crisis scenarios, and black swan events
 
-### narrative/ - Narrative Design
-- Story elements
-- World building
-- Event narratives
+## 📂 Implementation-Ready Systems
+
+### ✅ **Completed Design Specifications**
+- **Economy Model**: Mathematical formulas and balancing parameters
+- **Progression Framework**: 100-level progression with tier-based unlocks  
+- **AI Behavior**: Population, company, and investor decision algorithms
+- **UI/UX Specifications**: Cross-platform interface design with accessibility
+- **Tutorial System**: Adaptive learning with just-in-time education
+- **Event System**: Dynamic events, crises, and market disruptions
+
+### 🚧 **Ready for Implementation**
+All major game systems have detailed specifications ready for Unity ECS implementation:
+- Component definitions and data structures
+- System logic and update patterns  
+- Balancing parameters and configuration
+- UI layouts and interaction flows
+- Educational content and progression gates
 
 ## 🔗 Related Documents
 
